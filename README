@@ -93,13 +93,10 @@ import com.davoice.keywordsdetection.keywordslibrary.KeyWordsDetection;
     // Stop Listening:
     keyWordsDetection.stopListening();
 
-<h2>Links</h2>
-<ul>
 Here are wakeword detection github links per platform:
-<li><strong>For react Native got to:</li>  https://github.com/frymanofer/ReactNative_WakeWordDetection
-<li><strong>For Android:</li>
+For react Native got to:</li>  https://github.com/frymanofer/ReactNative_WakeWordDetection
+For Android:
   https://github.com/frymanofer/KeywordsDetectionAndroidLibrary
-<li><strong>For IOS framework:</li>
-   With React Native bridge: https://github.com/frymanofer/KeyWordDetectionIOSFramework <br>
+For IOS framework:
+   With React Native bridge: https://github.com/frymanofer/KeyWordDetectionIOSFramework
    Sole Framework: https://github.com/frymanofer/KeyWordDetection
-</ul>
