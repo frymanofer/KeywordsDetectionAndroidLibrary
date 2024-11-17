@@ -12,6 +12,7 @@ android {
     sourceSets {
         main {
             assets.srcDirs = ['src/main/assets']
+            jniLibs.srcDirs = ['src/main/jniLibs'] // Add this line if needed
         }
     }
 }
@@ -20,7 +21,7 @@ repositories {
     google()
     mavenCentral()
     flatDir {
-        dirs 'libs'
+        dirs 'src/main/libs' // Update this line
     }
     maven {
         url 'https://maven.pkg.github.com/microsoft/onnxruntime'
@@ -32,6 +33,13 @@ dependencies {
     implementation "com.facebook.react:react-native:+"
     implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.13.1'
     implementation 'ai.picovoice:android-voice-processor:1.0.2'
-    implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation fileTree(dir: "src/main/libs", include: ["*.aar"])
+ //   implementation(name: 'MyLibrary-release', ext: 'aar') // Add this line
 }
 
+// Run this once to be able to run the application with BUCK
+// puts all compile dependencies into folder libs for BUCK to use
+task copyDownloadableDepsToLibs(type: Copy) { 
+    from configurations.implementation
+    into 'libs'
+}
