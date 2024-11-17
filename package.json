@@ -1,6 +1,6 @@
 {
     "name": "keyword-detection-rn",
-    "version": "1.0.20",
+    "version": "1.0.22",
     "description": "Voice/Wake-word detection library for React Native",
     "main": "wakewords/index.js",
     "types": "wakewords/index.d.ts",

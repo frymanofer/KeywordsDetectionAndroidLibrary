@@ -5,7 +5,8 @@
 export declare const useModel: () => {
     isListening: boolean;
     startListening: () => Promise<void>;
-    loadModel: (state: any, callback: (phrase: string) => void) => Promise<void>;
+    loadModel: (models: [string], callback: (phrase: string) => void) => Promise<void>;
+    setKeywordDetectionLicense: (licenseKey: string) => Promise<void>;
     stopListening: () => Promise<void>;
 };
 export default useModel;

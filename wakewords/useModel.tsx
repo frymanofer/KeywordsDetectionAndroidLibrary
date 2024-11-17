@@ -7,7 +7,7 @@ import { Platform } from "react-native";
   
 type DetectionCallback = (event: any) => void;
 
-const license = "MTczMjkxNzYwMDAwMA==-DDwBWs914KpHbWBBSqi28vhiM4l5CYG+YgS2n9Z3DMI=";
+var license = "MTczMjkxNzYwMDAwMA==-DDwBWs914KpHbWBBSqi28vhiM4l5CYG+YgS2n9Z3DMI=";
 interface keyWordRNBridgeInstanceConfig {
     id: string;
     instance: KeyWordRNBridgeInstance;
@@ -28,7 +28,8 @@ function findInstanceById(id: string): keyWordRNBridgeInstanceConfig | undefined
 
 // Create an array of instance configurations
 const instanceConfigs:instanceConfig[] = [
-    { id: 'need_help_now', modelName: 'need_help_now.onnx', threshold: 0.9999, bufferCnt: 3 , sticky: false }
+    { id: 'need_help_now', modelName: 'need_help_now.onnx', threshold: 0.9999, bufferCnt: 3 , sticky: false },
+    { id: 'default', modelName: "", threshold: 0.9999, bufferCnt: 2 , sticky: false }
 ];
 
 // Function to add a new instance dynamically
@@ -116,6 +117,16 @@ export const useModel = () => {
     //     }
     // }, []);
 
+        /**
+     * Sets the keyword detection license
+     * @param licenseKey - The linceseKey
+     */
+    const setKeywordDetectionLicense = useCallback(        
+        async (licenseKey: string): Promise<void> => {
+        license = licenseKey;
+    }, []);
+
+    
     /**
      * Load the keyword detection model
      * @param modelFileName - The name of the model file to load
@@ -123,19 +134,24 @@ export const useModel = () => {
      * @param bufferCount - The number of audio buffers
      */
     const loadModel = useCallback(
-        async (state: any, callback: (phrase: string) => void): Promise<void> => {
+        async (models: [string], callback: (phrase: string) => void): Promise<void> => {
 
         console.log("loadModel()");
-        let searchIds = ["need_help_now"];
+        let searchIds = models;
         let element:any = null;
-        console.log("loadModel() - state == ", state)
+        console.log("loadModel() - models == ", models)
         try {
             stopListening();
             searchIds.forEach(sId => {
-                element = instanceConfigs.find(element => element.id === sId);
+                element = instanceConfigs.find(element => element.id === sId.split(".")[0]);
                 if (element == null || element == undefined) {
-                    console.error('element id' + sId + " not found in instanceConfigs");
-                    return;
+                    //console.error('element id' + sId + " not found in instanceConfigs");
+                    //return;
+                }
+                else {
+                    element = Object.assign({}, instanceConfigs.find(element => element.id === 'default'));
+                    element.modelName = sId;
+                    element.id = sId.split(".")[0];
                 }
                 console.log('element:', element);
                 const id = addInstance(element, callback);
@@ -203,6 +219,7 @@ export const useModel = () => {
         isListening,
         startListening,
         loadModel,
+        setKeywordDetectionLicense,
         stopListening,
     };
 };
