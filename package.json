@@ -1,7 +1,7 @@
 {
     "name": "keyword-detection-rn",
-    "version": "1.0.9",
-    "description": "Voice detection library for React Native",
+    "version": "1.0.10",
+    "description": "Voice/Wake-word detection library for React Native",
     "main": "lib/index.js",
     "react-native": {
         "android": "android"
