@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "allowJs": true, // Allows processing `.js` files
+        "declaration": true,              // Generate type declarations
+        "emitDeclarationOnly": true,     // Emit both .js and .d.ts
+        "outDir": "./wakewords",               // Output folder for compiled files
+        "module": "CommonJS",             // Use CommonJS modules
+        "target": "ESNext",               // Compile for ESNext
+        "jsx": "react",                   // Support React JSX
+        "checkJs": false,                  // Type-check .js files
+        "strict": true,                   // Enable strict mode
+        "skipLibCheck": true,
+        "esModuleInterop": true,           // Interoperate with CommonJS
+        "lib": ["dom", "esnext"],
+        "noImplicitAny": false     // Allow implicit `any` types
+    },
+    "include": ["wakewords/*.ts", "wakewords/*.tsx", "wakewords/*.js"],
+    "exclude": ["**node_modules/", "node_modules/", "node_modules", "dist"]                     // Exclude unnecessary files
+}

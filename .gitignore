@@ -1,0 +1,12 @@
+node_modules/
+node_modules/*
+**node_modules/*
+android/build/
+android/.gradle/
+android/local.properties
+.DS_Store
+
+android/.gradle/buildOutputCleanup/cache.properties
+package-lock.json
+wakewords/index.d.ts.chat_idiot
+x.java

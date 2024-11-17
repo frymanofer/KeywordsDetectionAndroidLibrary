@@ -28,19 +28,16 @@ function findInstanceById(id: string): keyWordRNBridgeInstanceConfig | undefined
 
 // Create an array of instance configurations
 const instanceConfigs:instanceConfig[] = [
-    { id: 'genious', modelName: 'genious.onnx', threshold: 0.9999, bufferCnt: 1, sticky: false },
-    { id: 'i_want_to_park', modelName: 'i_want_to_park.onnx', threshold: 0.9999, bufferCnt: 2, sticky: false  },
-    { id: 'need_help_now', modelName: 'need_help_now.onnx', threshold: 0.9999, bufferCnt: 2, sticky: false  },
-    { id: 'step_back', modelName: 'step_back.onnx', threshold: 0.9999, bufferCnt: 2, sticky: true  },
-    { id: 'electric_vehicle_parking', modelName: 'electric_vehicle_parking.onnx', threshold: 0.9999, bufferCnt: 2 , sticky: false },
-    { id: 'nearest_gaz_station', modelName: 'nearest_gaz_station.onnx', threshold: 0.9999, bufferCnt: 6 , sticky: false },
-    { id: 'i_want_to_stop_park', modelName: 'i_want_to_stop_park.onnx', threshold: 0.9999, bufferCnt: 3 , sticky: false }
+    { id: 'need_help_now', modelName: 'need_help_now.onnx', threshold: 0.9999, bufferCnt: 3 , sticky: false }
 ];
 
 // Function to add a new instance dynamically
 //async function addInstance(
 //    conf: instanceConfig) 
-async function addInstance(conf: instanceConfig, callback:any): KeyWordRNBridgeInstance | null {
+async function addInstance(
+    conf: instanceConfig,
+    callback: (phrase: string) => void
+): Promise<KeyWordRNBridgeInstance | null> {
     const id = conf.id;
     const instanceConf = findInstanceById(id);
     if (instanceConf != null) {
@@ -125,24 +122,14 @@ export const useModel = () => {
      * @param threshold - The detection threshold
      * @param bufferCount - The number of audio buffers
      */
-    const loadModel = useCallback(async (state, callback) => {
+    const loadModel = useCallback(
+        async (state: any, callback: (phrase: string) => void): Promise<void> => {
+
         console.log("loadModel()");
-        let searchIds = [""];
+        let searchIds = ["need_help_now"];
         let element:any = null;
         console.log("loadModel() - state == ", state)
         try {
-            switch (state) {
-                case 'state1':
-                    searchIds = ['genious'];
-                    break;
-                case 'state2':
-                    searchIds = ['i_want_to_park', 'need_help_now',
-                        'nearest_gaz_station', 'i_want_to_stop_park', 'electric_vehicle_parking', 'step_back'];
-                    //searchIds = ['i_want_to_park', 'i_want_to_stop_park', 'need_help_now', 'step_back'];
-                    break;
-                case 'step_back':
-                    searchIds = ['step_back'];
-                }
             stopListening();
             searchIds.forEach(sId => {
                 element = instanceConfigs.find(element => element.id === sId);
@@ -214,10 +201,10 @@ export const useModel = () => {
     // Return an object with the necessary functions and state
     return {
         isListening,
-        // setLicense,
         startListening,
         loadModel,
         stopListening,
     };
 };
 
+export default useModel; // Add this line to allow default import

@@ -4,6 +4,12 @@ import { NativeModules, NativeEventEmitter, Platform } from 'react-native';
 const { KeyWordRNBridge } = NativeModules;
 const keywordRNBridgeEmitter = new NativeEventEmitter(KeyWordRNBridge);
 
+if (KeyWordRNBridge) {
+    console.log("KeyWordRNBridge is loaded:", KeyWordRNBridge);
+  } else {
+    console.error("KeyWordRNBridge is not linked correctly.");
+  }
+  
 export class KeyWordRNBridgeInstance {
     instanceId;
     listeners = [];
