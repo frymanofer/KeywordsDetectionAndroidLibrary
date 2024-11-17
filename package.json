@@ -1,6 +1,6 @@
 {
     "name": "keyword-detection-rn",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "Voice/Wake-word detection library for React Native",
     "main": "lib/index.js",
     "react-native": {
@@ -14,8 +14,8 @@
     "scripts": {
         "build": "gradlew assembleRelease"
     },
-    "keywords": ["react-native", "voice", "wake-words"],
-    "author": "Your Name",
+    "keywords": ["react-native", "voice commands", "wake word", "keyword detection", "keyword spotting", "phrase spotting"],
+    "author": "Davoice.io",
     "license": "MIT"
 }
 
