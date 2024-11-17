@@ -1,0 +1,21 @@
+{
+    "name": "keyword-detection-rn",
+    "version": "1.0.9",
+    "description": "Voice detection library for React Native",
+    "main": "lib/index.js",
+    "react-native": {
+        "android": "android"
+    },
+    "files": [
+        "android/",
+        "lib/",
+        "react-native.config.js"
+    ],
+    "scripts": {
+        "build": "gradlew assembleRelease"
+    },
+    "keywords": ["react-native", "voice", "wake-words"],
+    "author": "Your Name",
+    "license": "MIT"
+}
+

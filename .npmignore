@@ -1,0 +1,8 @@
+node_modules/
+android/build/
+android/.gradle/
+android/local.properties
+.git/
+.gitignore
+.DS_Store
+
