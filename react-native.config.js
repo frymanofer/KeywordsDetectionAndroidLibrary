@@ -1,6 +1,6 @@
 module.exports = {
     dependencies: {
-        'keyword-detection-rn': {
+        'react-native-wakeword': {
             platforms: {
                 android: {
                     sourceDir: './android',
