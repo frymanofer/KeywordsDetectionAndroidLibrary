@@ -1,15 +1,19 @@
 {
     "name": "react-native-wakeword",
-    "version": "1.0.22",
+    "version": "1.0.25",
     "description": "Voice/Wake-word detection library for React Native",
     "main": "wakewords/index.js",
     "types": "wakewords/index.d.ts",
     "files": [
         "wakewords/",
         "android/",
-        "react-native.config.js"
+        "ios/",
+        "react-native.config.js",
+        "module.modulemap",
+        "KeyWordDetection.podspec"
     ],
     "react-native": {
+        "ios": "ios",
         "android": "android"
     },
     "scripts": {

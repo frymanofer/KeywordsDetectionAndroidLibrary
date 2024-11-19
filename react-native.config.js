@@ -7,6 +7,9 @@ module.exports = {
                     packageImportPath: 'import com.davoice.keywordspotting.KeyWordRNBridgePackage;',
                     packageInstance: 'new KeyWordRNBridgePackage()',
                 },
+                ios: {
+                    podspecPath: './KeyWordDetection.podspec', // Points to your podspec
+                },    
             },
         },
     },
