@@ -27,9 +27,8 @@ function findInstanceById(id: string): keyWordRNBridgeInstanceConfig | undefined
 }
 
 // Create an array of instance configurations
-const instanceConfigs:instanceConfig[] = [
+var instanceConfigs:instanceConfig[] = [
     { id: 'need_help_now', modelName: 'need_help_now.onnx', threshold: 0.9999, bufferCnt: 3 , sticky: false },
-    { id: 'default', modelName: "", threshold: 0.9999, bufferCnt: 2 , sticky: false }
 ];
 
 // Function to add a new instance dynamically
@@ -134,27 +133,16 @@ export const useModel = () => {
      * @param bufferCount - The number of audio buffers
      */
     const loadModel = useCallback(
-        async (models: [string], callback: (phrase: string) => void): Promise<void> => {
+        async (useConfigs: instanceConfig[], callback: (phrase: string) => void): Promise<void> => {
 
         console.log("loadModel()");
-        let searchIds = models;
+        instanceConfigs = useConfigs;
         let element:any = null;
-        console.log("loadModel() - models == ", models)
+        console.log("loadModel() - instanceConfigs == ", instanceConfigs)
         try {
-            stopListening();
-            searchIds.forEach(sId => {
-                element = instanceConfigs.find(element => element.id === sId.split(".")[0]);
-                if (element == null || element == undefined) {
-                    //console.error('element id' + sId + " not found in instanceConfigs");
-                    //return;
-                }
-                else {
-                    element = Object.assign({}, instanceConfigs.find(element => element.id === 'default'));
-                    element.modelName = sId;
-                    element.id = sId.split(".")[0];
-                }
-                console.log('element:', element);
-                const id = addInstance(element, callback);
+            instanceConfigs.forEach(element => {
+            console.log('Adding element:', element);
+            const id = addInstance(element, callback);
             });
         } catch (error) {
             console.error("[useModel] Error loading model:", error);
@@ -168,7 +156,12 @@ export const useModel = () => {
         try {
             keyWordRNBridgeInstances.forEach(element => {
                 const instance = element.instance;
-                instance.startKeywordDetection();
+                const conf = instanceConfigs.find(element => element.id === instance.instanceId);
+                if (conf) {
+                    instance.startKeywordDetection(conf.threshold);
+                } else {
+                    console.error(`No configuration found for instance ID: ${instance.instanceId}`);
+                }
                 /*if (instance.isSticky == false) {
                     instance.stopKeywordDetection();
                 } else if (Platform.OS != 'ios') {
