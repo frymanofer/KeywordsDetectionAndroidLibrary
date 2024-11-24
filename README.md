@@ -3,11 +3,7 @@ DaVoice.io Voice commands / Wake words / Voice to Intent / keyword detection npm
 
 Contact us at info@DaVoice.io
 
-## What's in this package
-
-### This package includes 
-1. "Wake Word" (also known as: "keyword detection" and "phrase spotting") api to enable ios and android applications.
-2. "Speech to Intent" (also known as: "voice commands" and "phrase spotting") very similar to "Wake Word" however mainly used to use speech command to control the application rather than waking up the application.
+# IOS and Android Package
 
 ## Installation
 npm install react-native-wakeword
