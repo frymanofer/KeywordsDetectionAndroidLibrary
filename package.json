@@ -31,9 +31,12 @@
         "react-native",
         "voice commands",
         "wake word",
+        "wakeword",
+        "wake words",
         "keyword detection",
         "keyword spotting",
         "speech to intent",
+        "voice to intent",
         "phrase spotting"
     ],
     "author": "Davoice.io",
