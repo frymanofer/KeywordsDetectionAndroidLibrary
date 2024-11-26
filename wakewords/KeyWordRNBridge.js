@@ -20,30 +20,25 @@ export class KeyWordRNBridgeInstance {
       this.isSticky = isSticky;
     }
   
-    createInstance(
-      modelName,
-      threshold,
-      bufferCnt) 
-      {
-      instance = KeyWordRNBridge.createInstance(
+    async createInstance(modelName, threshold, bufferCnt) {
+      instance = await KeyWordRNBridge.createInstance(
         this.instanceId,
         modelName,
         threshold,
-        bufferCnt
-      );
+        bufferCnt);
       if (instance && this.isFirstInstance)
       {
         this.isFirstInstance = false;
-        KeyWordRNBridge.startForegroundService(this.instanceId); 
+        await KeyWordRNBridge.startForegroundService(this.instanceId); 
       }
       return instance;
     }
 
-    setKeywordDetectionLicense(license) {
+    async setKeywordDetectionLicense(license) {
         return KeyWordRNBridge.setKeywordDetectionLicense(this.instanceId, license);
     }
 
-    replaceKeywordDetectionModel(modelName, threshold, bufferCnt) {
+    async replaceKeywordDetectionModel(modelName, threshold, bufferCnt) {
         return KeyWordRNBridge.replaceKeywordDetectionModel(this.instanceId, modelName, threshold, bufferCnt);
     }
     /*startForegroundService() {
@@ -53,19 +48,19 @@ export class KeyWordRNBridgeInstance {
     stopForegroundService() {
         return KeyWordRNBridge.stopForegroundService(this.instanceId);
     }*/
-    setKeywordLicense(license) {
+    async setKeywordLicense(license) {
         return KeyWordRNBridge.setKeywordLicense(this.instanceId, license);
     }
 
-    startKeywordDetection(threshold) {
+    async startKeywordDetection(threshold) {
         return KeyWordRNBridge.startKeywordDetection(this.instanceId, threshold);
     }
 
-    stopKeywordDetection() {
+    async stopKeywordDetection() {
         return KeyWordRNBridge.stopKeywordDetection(this.instanceId);
     }
 
-    destroyInstance() {
+    async destroyInstance() {
         return KeyWordRNBridge.destroyInstance(this.instanceId);
     }
 

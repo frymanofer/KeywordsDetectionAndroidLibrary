@@ -4,13 +4,13 @@ export class KeyWordRNBridgeInstance {
     listeners: any[];
     isFirstInstance: boolean;
     isSticky: any;
-    createInstance(modelName: any, threshold: any, bufferCnt: any): any;
-    setKeywordDetectionLicense(license: any): any;
-    replaceKeywordDetectionModel(modelName: any, threshold: any, bufferCnt: any): any;
-    setKeywordLicense(license: any): any;
-    startKeywordDetection(threshold: any): any;
-    stopKeywordDetection(): any;
-    destroyInstance(): any;
+    createInstance(modelName: any, threshold: any, bufferCnt: any): Promise<any>;
+    setKeywordDetectionLicense(license: any): Promise<any>;
+    replaceKeywordDetectionModel(modelName: any, threshold: any, bufferCnt: any): Promise<any>;
+    setKeywordLicense(license: any): Promise<any>;
+    startKeywordDetection(threshold: any): Promise<any>;
+    stopKeywordDetection(): Promise<any>;
+    destroyInstance(): Promise<any>;
     onKeywordDetectionEvent(callback: any): void;
     removeListeners(): void;
 }

@@ -43,7 +43,7 @@ async function addInstance(
     if (instanceConf != null) {
         console.log("Found Instance: ", id, "starting to listen");
         const instance = instanceConf.instance;
-        instance.startKeywordDetection(conf.threshold);
+        await instance.startKeywordDetection(conf.threshold);
         return instance;
     }
     const instance = await createKeyWordRNBridgeInstance(id, conf.sticky);
@@ -68,7 +68,7 @@ async function addInstance(
       callback(id);
     });
     console.log(`Instance ${id} calling startKeywordDetection()`);
-    instance.startKeywordDetection(conf.threshold);
+    await instance.startKeywordDetection(conf.threshold);
     console.log(`Instance ${id} started Keyword Detection`);
     return instance;
   }
@@ -140,9 +140,9 @@ export const useModel = () => {
         let element:any = null;
         console.log("loadModel() - instanceConfigs == ", instanceConfigs)
         try {
-            instanceConfigs.forEach(element => {
-            console.log('Adding element:', element);
-            const id = addInstance(element, callback);
+            instanceConfigs.forEach(async element => {
+                console.log('Adding element:', element);
+                const id = await addInstance(element, callback);
             });
         } catch (error) {
             console.error("[useModel] Error loading model:", error);
@@ -154,11 +154,11 @@ export const useModel = () => {
      */
     const startListening = useCallback(async () => {
         try {
-            keyWordRNBridgeInstances.forEach(element => {
+            keyWordRNBridgeInstances.forEach(async element => {
                 const instance = element.instance;
                 const conf = instanceConfigs.find(element => element.id === instance.instanceId);
                 if (conf) {
-                    instance.startKeywordDetection(conf.threshold);
+                    await instance.startKeywordDetection(conf.threshold);
                 } else {
                     console.error(`No configuration found for instance ID: ${instance.instanceId}`);
                 }
@@ -179,9 +179,9 @@ export const useModel = () => {
      */
     const stopListening = useCallback(async () => {
         try {
-            keyWordRNBridgeInstances.forEach(element => {
+            keyWordRNBridgeInstances.forEach(async element => {
                 const instance = element.instance;
-                instance.stopKeywordDetection();
+                await instance.stopKeywordDetection();
                 /*if (instance.isSticky == false) {
                     instance.stopKeywordDetection();
                 } else if (Platform.OS != 'ios') {
