@@ -8,6 +8,20 @@ Contact us at info@DaVoice.io
 ## Installation
 npm install react-native-wakeword
 
+## Android:
+Add this to your android/build.gradle file:
+
+allprojects {
+    repositories {
+        // react-native-wakeword added
+	    maven { url "${project(":react-native-wakeword").projectDir}/libs" }
+        maven { url("${project(':react-native-wakeword').projectDir}/libs") } 
+        maven {
+            url("${project(':react-native-wakeword').projectDir}/libs")
+        }
+        // End react-native-wakeword added
+        ... your other lines...
+
 ## Githhub examples:
 
 ### Checkout examples on:

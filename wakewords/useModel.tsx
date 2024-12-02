@@ -7,7 +7,7 @@ import { Platform } from "react-native";
   
 type DetectionCallback = (event: any) => void;
 
-var license = "MTczMjkxNzYwMDAwMA==-DDwBWs914KpHbWBBSqi28vhiM4l5CYG+YgS2n9Z3DMI=";
+var license = "MTczNDIxMzYwMDAwMA==-tNV5HJ3NTRQCs5IpOe0imza+2PgPCJLRdzBJmMoJvok=";
 interface keyWordRNBridgeInstanceConfig {
     id: string;
     instance: KeyWordRNBridgeInstance;
@@ -31,6 +31,14 @@ var instanceConfigs:instanceConfig[] = [
     { id: 'need_help_now', modelName: 'need_help_now.onnx', threshold: 0.9999, bufferCnt: 3 , sticky: false },
 ];
 
+// Helper function to format the ONNX file name
+const formatWakeWord = (fileName) => {
+    return fileName
+      .replace(/_/g, ' ')  // Use global flag to replace all underscores
+      .replace('.onnx', '')
+      .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize each word
+};
+  
 // Function to add a new instance dynamically
 //async function addInstance(
 //    conf: instanceConfig) 
@@ -63,9 +71,10 @@ async function addInstance(
     keyWordRNBridgeInstances.push({ id, instance });
       // Set up event listener
     instance.onKeywordDetectionEvent((phrase: string) => {
+      phrase = formatWakeWord(id);
       console.log(`Instance ${id} detected: ${id} with phrase`, phrase);
       // callback(phrase); Does not work on IOS
-      callback(id);
+      callback(phrase);
     });
     console.log(`Instance ${id} calling startKeywordDetection()`);
     await instance.startKeywordDetection(conf.threshold);

@@ -20,11 +20,14 @@ android {
 repositories {
     google()
     mavenCentral()
-    flatDir {
-        dirs 'src/main/libs' // Update this line
-    }
     maven {
         url 'https://maven.pkg.github.com/microsoft/onnxruntime'
+    }
+    maven {
+        url './libs'
+    }
+    maven {
+        url "$projectDir/libs"
     }
     mavenLocal()
 }
@@ -33,7 +36,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"
     implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.13.1'
     implementation 'ai.picovoice:android-voice-processor:1.0.2'
-    implementation fileTree(dir: "src/main/libs", include: ["*.aar"])
+    implementation 'com.davoice:keyworddetection:1.0.0'
  //   implementation(name: 'MyLibrary-release', ext: 'aar') // Add this line
 }
 
