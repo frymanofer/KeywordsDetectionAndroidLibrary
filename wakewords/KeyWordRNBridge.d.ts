@@ -14,4 +14,5 @@ export class KeyWordRNBridgeInstance {
     onKeywordDetectionEvent(callback: any): void;
     removeListeners(): void;
 }
+export function removeAllRNBridgeListeners(): Promise<void>;
 export function createKeyWordRNBridgeInstance(instanceId: any, isSticky: any): Promise<KeyWordRNBridgeInstance>;
