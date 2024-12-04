@@ -79,6 +79,10 @@ export class KeyWordRNBridgeInstance {
     }
 }
 
+export const removeAllRNBridgeListeners = async () => {
+    keywordRNBridgeEmitter.removeAllListeners('onKeywordDetectionEvent');
+}
+
 export const createKeyWordRNBridgeInstance = async (instanceId, isSticky) => {
     return new KeyWordRNBridgeInstance(instanceId, isSticky);
 };

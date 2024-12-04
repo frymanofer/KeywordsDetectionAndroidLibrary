@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import {
     createKeyWordRNBridgeInstance,
+    removeAllRNBridgeListeners,
     KeyWordRNBridgeInstance,
   } from './KeyWordRNBridge';
 import { Platform } from "react-native";
@@ -69,8 +70,11 @@ async function addInstance(
     console.log(`Instance ${id} created ${instance} and licensed ${isLicesed}`);
   
     keyWordRNBridgeInstances.push({ id, instance });
-      // Set up event listener
-    instance.onKeywordDetectionEvent((phrase: string) => {
+
+    // Set up event listener
+    // Clean all listeners keywordRNBridgeEmitter.removeAllListeners('onKeywordDetectionEvent');
+
+    const eventListener = instance.onKeywordDetectionEvent((phrase: string) => {
       phrase = formatWakeWord(id);
       console.log(`Instance ${id} detected: ${id} with phrase`, phrase);
       // callback(phrase); Does not work on IOS
@@ -212,6 +216,8 @@ export const useModel = () => {
         return () => {
             if (isListening) {
                 stopListening();
+                // Clean all listeners keywordRNBridgeEmitter.removeAllListeners('onKeywordDetectionEvent');
+                removeAllRNBridgeListeners();
             }
         };
     }, [isListening, stopListening]);
