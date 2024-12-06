@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/frymanofer/KeywordsDetectionAndroidLibrary.git" # Update with your repo URL
     s.license      = { :type => "MIT" } # Update if different
     s.author       = { "Your Name" => "ofer@davoice.io" } # Update with your info
-    s.platform     = :ios, "11"
+    s.platform     = :ios, "15.1"
 #   s.source       = { :git => "https://github.com/frymanofer/KeywordsDetectionAndroidLibrary.git", :tag => s.version.to_s } # Update accordingly
     s.source       = { :path => "." }
 
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
     s.dependency "React"
     s.dependency "onnxruntime-objc", "~> 1.18.0"
-    s.dependency "ios-voice-processor", "~> 1.1.0"
+    s.dependency "ios-voice-processor", "~> 1.2.0"
   
     s.pod_target_xcconfig = {
       "FRAMEWORK_SEARCH_PATHS" => "\"$(PODS_ROOT)/react-native-wakeword/ios\"",

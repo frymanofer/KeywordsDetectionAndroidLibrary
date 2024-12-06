@@ -1,6 +1,6 @@
 {
     "name": "react-native-wakeword",
-    "version": "1.0.44",
+    "version": "1.0.45",
     "description": "Voice/Wake-word detection library for React Native",
     "main": "wakewords/index.js",
     "types": "wakewords/index.d.ts",
@@ -48,6 +48,9 @@
         "Voice Commands Recognition",
         "lightweight Voice Commands Recognition",
         "customized lightweight Voice Commands Recognition",
+        "Wake word detection github",
+        "Wake word generator",
+        "Custom wake word",
         "rn wake word"
     ],
     "author": "Davoice.io",
