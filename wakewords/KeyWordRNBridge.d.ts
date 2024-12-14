@@ -11,7 +11,7 @@ export class KeyWordRNBridgeInstance {
     startKeywordDetection(threshold: any): Promise<any>;
     stopKeywordDetection(): Promise<any>;
     destroyInstance(): Promise<any>;
-    onKeywordDetectionEvent(callback: any): void;
+    onKeywordDetectionEvent(callback: any): import("react-native").EmitterSubscription;
     removeListeners(): void;
 }
 export function removeAllRNBridgeListeners(): Promise<void>;

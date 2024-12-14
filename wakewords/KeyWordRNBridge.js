@@ -71,6 +71,7 @@ export class KeyWordRNBridgeInstance {
             }
         });
         this.listeners.push(listener);
+        return listener;
     }
 
     removeListeners() {
