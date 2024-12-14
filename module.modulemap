@@ -4,5 +4,3 @@ framework module KeyWordDetection {
     export *
     module * { export * }
 }
-
-
