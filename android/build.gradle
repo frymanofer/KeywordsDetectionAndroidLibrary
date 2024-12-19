@@ -34,7 +34,7 @@ repositories {
 
 dependencies {
     implementation "com.facebook.react:react-native:+"
-    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.13.1'
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.20.0'
     implementation 'ai.picovoice:android-voice-processor:1.0.2'
     implementation 'com.davoice:keyworddetection:1.0.0'
  //   implementation(name: 'MyLibrary-release', ext: 'aar') // Add this line
