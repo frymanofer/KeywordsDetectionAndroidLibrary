@@ -762,6 +762,191 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "eventSink",
+            "printedName": "eventSink",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(([Swift.String : Any]) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Swift.String : Any]) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvp",
+            "mangledName": "$s16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvp",
+            "moduleName": "KeyWordDetection",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(([Swift.String : Any]) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "([Swift.String : Any]) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Dictionary",
+                            "printedName": "[Swift.String : Any]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ProtocolComposition",
+                                "printedName": "Any"
+                              }
+                            ],
+                            "usr": "s:SD"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvg",
+                "mangledName": "$s16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvg",
+                "moduleName": "KeyWordDetection",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(([Swift.String : Any]) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "([Swift.String : Any]) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Dictionary",
+                            "printedName": "[Swift.String : Any]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ProtocolComposition",
+                                "printedName": "Any"
+                              }
+                            ],
+                            "usr": "s:SD"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvs",
+                "mangledName": "$s16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvs",
+                "moduleName": "KeyWordDetection",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvM",
+                "mangledName": "$s16KeyWordDetection0a5WordsC0C9eventSinkySDySSypGcSgvM",
+                "moduleName": "KeyWordDetection",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(modelPath:threshold:bufferCnt:)",
@@ -1174,6 +1359,62 @@
       },
       {
         "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "os.log",
+        "printedName": "os.log",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "onnxruntime_objc",
+        "printedName": "onnxruntime_objc",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "os.log",
+        "printedName": "os.log",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "onnxruntime_objc",
+        "printedName": "onnxruntime_objc",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KeyWordDetection"
+      },
+      {
+        "kind": "Import",
         "name": "CommonCrypto",
         "printedName": "CommonCrypto",
         "declKind": "Import",
@@ -1297,112 +1538,98 @@
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7074,
+      "offset": 7128,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "BooleanLiteral",
-      "offset": 7269,
+      "offset": 7323,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7425,
+      "offset": 7479,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7566,
+      "offset": 7620,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7571,
+      "offset": 7625,
       "length": 2,
       "value": "97"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7710,
-      "length": 3,
-      "value": "512"
-    },
-    {
-      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7772,
-      "length": 3,
-      "value": "512"
-    },
-    {
-      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7838,
+      "offset": 7767,
       "length": 5,
       "value": "16000"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7895,
+      "offset": 7824,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 7977,
+      "offset": 7906,
       "length": 2,
       "value": "80"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 8013,
+      "offset": 7942,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "BooleanLiteral",
-      "offset": 8045,
+      "offset": 7974,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 8495,
+      "offset": 8424,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 8552,
+      "offset": 8481,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 8598,
+      "offset": 8527,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/KeyWordsDetection.swift",
       "kind": "IntegerLiteral",
-      "offset": 8683,
+      "offset": 8612,
       "length": 4,
       "value": "5000"
     },
@@ -1444,93 +1671,86 @@
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "StringLiteral",
-      "offset": 718,
+      "offset": 715,
       "length": 17,
       "value": "\"silero_vad.onnx\""
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "BooleanLiteral",
-      "offset": 875,
+      "offset": 872,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "FloatLiteral",
-      "offset": 917,
+      "offset": 914,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "FloatLiteral",
-      "offset": 996,
+      "offset": 993,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "FloatLiteral",
-      "offset": 1086,
+      "offset": 1083,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "FloatLiteral",
-      "offset": 1193,
+      "offset": 1187,
       "length": 4,
-      "value": "0.15"
+      "value": "0.45"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "IntegerLiteral",
-      "offset": 1433,
-      "length": 4,
-      "value": "1024"
-    },
-    {
-      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1487,
+      "offset": 1438,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "IntegerLiteral",
-      "offset": 1534,
+      "offset": 1485,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "IntegerLiteral",
-      "offset": 1567,
+      "offset": 1539,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1598,
-      "length": 1,
-      "value": "0"
+      "kind": "Array",
+      "offset": 1641,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
+      "kind": "Array",
+      "offset": 1692,
+      "length": 2,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
       "kind": "IntegerLiteral",
-      "offset": 1662,
+      "offset": 1740,
       "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1818,
-      "length": 1,
-      "value": "0"
+      "value": "5"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/AudioProcessorFromVADOrFile.swift",
@@ -1559,6 +1779,48 @@
       "offset": 1454,
       "length": 3,
       "value": "512"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/Constants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 49,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/Constants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 147,
+      "length": 5,
+      "value": "16000"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/SlieroVadOnnxModel.swift",
+      "kind": "Array",
+      "offset": 229,
+      "length": 7,
+      "value": "[16000]"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/SlieroVadOnnxModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 267,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/SlieroVadOnnxModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 306,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/SlieroVadOnnxModel.swift",
+      "kind": "Dictionary",
+      "offset": 353,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/oferfryman\/projects\/VAD_WAKEWORD_FILES\/wakewords\/KeyWordLibraryIOS3\/Sources\/LicenseManager.swift",

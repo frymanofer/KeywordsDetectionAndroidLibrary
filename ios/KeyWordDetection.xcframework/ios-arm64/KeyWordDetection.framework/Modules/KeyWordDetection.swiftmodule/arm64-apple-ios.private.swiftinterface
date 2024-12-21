@@ -26,6 +26,7 @@ import os
 }
 @objc public class KeyWordsDetection : ObjectiveC.NSObject {
   @objc weak public var delegate: (any KeyWordDetection.KeywordDetectionRNDelegate)?
+  public var eventSink: (([Swift.String : Any]) -> Swift.Void)?
   @objc public init(modelPath: Swift.String, threshold: Swift.Float, bufferCnt: Swift.Int) throws
   @objc public func replaceKeywordDetectionModel(modelPath: Swift.String, threshold: Swift.Float, bufferCnt: Swift.Int) throws
   @objc public func getKeywordDetectionModel() -> Swift.String
